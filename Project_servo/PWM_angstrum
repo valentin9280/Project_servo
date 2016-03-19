@@ -1,0 +1,10 @@
+Générer une pwm :
+>>cd /sys/kernel/debug/omap_mux/   // Trouver le multiplexeur de la pin et le configurer en PWM
+>>cat gpmc_a2                                    // Pin 9-14, multiplexer par defaut en Entrer
+>>echo 6 > gpmc_a2 			            // Met la pin en sortie PWM
+>>cd /sys/class/pwm/ehrpwm.1\:0      // Configuration de la pwm  de la pin 9-14
+>>cat request				                 // Vérification si la on peu alouer la mémoire
+>>echo 1 > request			           // Allocation de la mémoire
+>>echo 500000 > period_ns		   // période de la pwm
+>>echo 100 > duty_percent		      // Intensité de la led
+>>echo 1 > run 			            // Activation de la PWM

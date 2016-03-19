@@ -1,0 +1,3 @@
+SANITY_VERSION 1
+TMPDIR /home/poky/build/tmp
+SSTATE_DIR /home/poky/build/sstate-cache

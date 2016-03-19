@@ -1,0 +1,10 @@
+Activation d'une Led BeagleBone :
+>>sudo gtkterm           // emulateur, USB0 ; 115200 -> root
+>>cd /sys/class/gpio     // Chemin d’accès au GPIO
+>>echo 60 > export      // Aloction pour la pin P9-12 (GPIO1-28)   60= 1*32 + 28
+>>cd gpio60                 // Accède à la pin
+>>echo out > direction // Met la pin en sortie
+>>echo 1 > value          // Allume la led
+>>echo 0 > value          // Eteint la led
+>>cd .. 		  // Revien au répertoir précédant
+>>echo 60 >unexport   // D ésalocation pour la pin P9-12
