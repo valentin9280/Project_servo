@@ -35,11 +35,15 @@ private slots:
 
     void on_ButtonDroit_clicked();
 
-    void on_ButtonLaser_clicked();
-
     void SerialConnect(QString PortName);
 
     void DataWritten(qint64);
+
+    void on_ButtonLaserON_clicked();
+
+    void on_ButtonLaserOFF_clicked();
+
+    void on_ButtonINIT_clicked();
 
 private:
     Ui::MainWindow *ui;

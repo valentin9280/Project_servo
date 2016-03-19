@@ -21,12 +21,12 @@ void protocole_serie::LaserOFF()
     trametoSend.append('\0');
 
 }
-void protocole_serie::Forme(int figure)
+void protocole_serie::Dessiner(int figure)
 {
     trametoSend.clear();
     trametoSend.append(Forme);
     trametoSend.append(figure);
-    trametoSend.append('\0'');
+    trametoSend.append('\0');
 }
 
 void protocole_serie::InitMoteur(void)
@@ -39,19 +39,23 @@ void protocole_serie::InitMoteur(void)
 
 void protocole_serie::MoveMoteur(int SensMoteur1, int SensMoteur2)
 {
-    trame.clear();
-    trame.append(Move);
+    trametoSend.clear();
+    trametoSend.append(Move);
     switch(SensMoteur1)
     {
-        case -1:trame.append(Gauche);break;
-        case 0:trame.append(NoMove);break;
-        case 1:trame.append(Droite);break;
+        case -1:trametoSend.append(Gauche);break;
+        case 0:trametoSend.append(NoMove);break;
+        case 1:trametoSend.append(Droite);break;
     }
     switch(SensMoteur2)
     {
-        case -1:trame.append(Gauche);break;
-        case 0:trame.append(NoMove);break;
-        case 1:trame.append(Droite);break;
+        case -1:trametoSend.append(Gauche);break;
+        case 0:trametoSend.append(NoMove);break;
+        case 1:trametoSend.append(Droite);break;
     }
-    trame.append('\0');
+    trametoSend.append('\0');
+}
+QByteArray protocole_serie::GetTrame(void)
+{
+    return this->trametoSend;
 }

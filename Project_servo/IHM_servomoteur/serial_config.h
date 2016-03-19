@@ -17,17 +17,16 @@ class serial_config : public QDialog
 public:
     explicit serial_config(QWidget *parent = 0);
     ~serial_config();
+signals:
+    void ConfigurationSerialConnection(QString config);
 
 private slots:
-    void on_pushButton_clicked();
 
     void on_ButtonOk_clicked();
 
     void on_ButtonAnnuler_clicked();
 
-    void on_ButtoRefresh_clicked();
-signals:
-    void ConfigurationSerialConnection(QString config);
+    void on_ButtonRefresh_clicked();
 
 private:
     Ui::serial_config *ui;

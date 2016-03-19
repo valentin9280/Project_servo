@@ -37,6 +37,11 @@
       <height>25</height>
      </rect>
     </property>
+    <item>
+     <property name="text">
+      <string>NO</string>
+     </property>
+    </item>
    </widget>
    <widget class="QComboBox" name="comboBoxFlowControl">
     <property name="geometry">
@@ -47,6 +52,11 @@
       <height>25</height>
      </rect>
     </property>
+    <item>
+     <property name="text">
+      <string>NO</string>
+     </property>
+    </item>
    </widget>
    <widget class="QLabel" name="label_5">
     <property name="geometry">
@@ -70,6 +80,11 @@
       <height>25</height>
      </rect>
     </property>
+    <item>
+     <property name="text">
+      <string>1</string>
+     </property>
+    </item>
    </widget>
    <widget class="QLabel" name="label">
     <property name="geometry">
@@ -132,8 +147,19 @@
       <height>25</height>
      </rect>
     </property>
+    <property name="currentText">
+     <string>8</string>
+    </property>
+    <item>
+     <property name="text">
+      <string>8</string>
+     </property>
+    </item>
    </widget>
    <widget class="QComboBox" name="comboBoxCONN">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
     <property name="geometry">
      <rect>
       <x>120</x>
@@ -141,6 +167,9 @@
       <width>86</width>
       <height>25</height>
      </rect>
+    </property>
+    <property name="editable">
+     <bool>false</bool>
     </property>
    </widget>
    <widget class="QComboBox" name="comboBoxBaud">
@@ -152,6 +181,11 @@
       <height>25</height>
      </rect>
     </property>
+    <item>
+     <property name="text">
+      <string>115200</string>
+     </property>
+    </item>
    </widget>
    <widget class="QLabel" name="label_4">
     <property name="geometry">
@@ -166,7 +200,7 @@
      <string>Stop Bit</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="ButtoRefresh">
+   <widget class="QPushButton" name="ButtonRefresh">
     <property name="geometry">
      <rect>
       <x>220</x>
@@ -204,6 +238,19 @@
    </property>
    <property name="text">
     <string>Annuler</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="test">
+   <property name="geometry">
+    <rect>
+     <x>260</x>
+     <y>296</y>
+     <width>161</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
    </property>
   </widget>
  </widget>

@@ -6,11 +6,11 @@ serial_config::serial_config(QWidget *parent) :
     ui(new Ui::serial_config)
 {
     ui->setupUi(this);
-    QList<QSerialPortInfo> liste;
-    liste = QSerialPortInfo::availablePorts();
+    QList<QSerialPortInfo> list;
+    list = QSerialPortInfo::availablePorts();
 
-    for(int i = 0; i < liste.size(); i++)
-        ui->comboBoxCONN->addItem(liste.at(i).portName());
+    for(int i = 0; i < list.size(); i++)
+        ui->comboBoxCONN->addItem(list.at(i).portName());
 }
 
 serial_config::~serial_config()
@@ -22,21 +22,23 @@ serial_config::~serial_config()
 void serial_config::on_ButtonOk_clicked()
 {
     emit ConfigurationSerialConnection(ui->comboBoxCONN->currentText());
+    close();
 }
 
 
 void serial_config::on_ButtonAnnuler_clicked()
 {
-    delete ui;
+    close();
 }
 
-void serial_config::on_ButtoRefresh_clicked()
+
+void serial_config::on_ButtonRefresh_clicked()
 {
+
     ui->comboBoxCONN->clear();
-    QList<QSerialPortInfo> liste;
-    liste = QSerialPortInfo::availablePorts();
+    QList<QSerialPortInfo> list;
+    list = QSerialPortInfo::availablePorts();
 
-    for(int i = 0; i < liste.size(); i++)
-       ui->comboBoxCONN->addItem(liste.at(i).portName());
+    for(int i = 0; i < list.size(); i++)
+       ui->comboBoxCONN->addItem(list.at(i).portName());
 }
-
