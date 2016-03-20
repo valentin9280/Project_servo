@@ -37,8 +37,6 @@ private slots:
 
     void SerialConnect(QString PortName);
 
-    void DataWritten(qint64);
-
     void on_ButtonLaserON_clicked();
 
     void on_ButtonLaserOFF_clicked();

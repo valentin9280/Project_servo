@@ -32,7 +32,7 @@ void MainWindow::SerialConnect(QString PortName)
         ui->Log->append("Connecté à : " + PortName + " 115200Bds, 8 Data, NoParity, 1 Stop ");
         ui->groupBoxForme->setEnabled(true);
         ui->groupBoxCommande->setEnabled(true);
-       connect(SerialPort, SIGNAL(bytesWritten(qint64)), this,SLOT(DataWritten(qint64)));
+       //connect(SerialPort, SIGNAL(bytesWritten(qint64)), this,SLOT(DataWritten(qint64)));
 
     }
     else
@@ -43,65 +43,69 @@ void MainWindow::SerialConnect(QString PortName)
 
 }
 
-void MainWindow::DataWritten(qint64)
-{
-    ui->Log->append("Trame envoyée : " + Protocole->GetTrame());
-}
-
 void MainWindow::on_SerialButton_clicked()
 {
    WindowSerial->show();
+   SerialPort->write(Protocole->trametoSend);
 }
 
 void MainWindow::on_CarreButton_clicked()
 {
-     Protocole -> Dessiner(31);
+     Protocole -> Dessiner(49);
+     SerialPort->write(Protocole->trametoSend);
 }
 
 void MainWindow::on_TriangleButton_clicked()
 {
- Protocole -> Dessiner(33);
+ Protocole -> Dessiner(51);
+ SerialPort->write(Protocole->trametoSend);
 }
 
 void MainWindow::on_RondButton_clicked()
 {
-  Protocole -> Dessiner(32);
+  Protocole -> Dessiner(50);
+  SerialPort->write(Protocole->trametoSend);
 }
 
 void MainWindow::on_ButtonHaut_clicked()
 {
  Protocole-> MoveMoteur(1,0);
+ SerialPort->write(Protocole->trametoSend);
 }
 
 void MainWindow::on_ButtonGauche_clicked()
 {
  Protocole-> MoveMoteur(0,-1);
+ SerialPort->write(Protocole->trametoSend);
 }
 
 void MainWindow::on_ButtonBas_clicked()
 {
   Protocole-> MoveMoteur(-1,0);
+  SerialPort->write(Protocole->trametoSend);
 }
 
 void MainWindow::on_ButtonDroit_clicked()
 {
    Protocole->MoveMoteur(0,1);
+   SerialPort->write(Protocole->trametoSend);
 }
 
 
 void MainWindow::on_ButtonLaserON_clicked()
 {
     Protocole->LaserON();
-    //SerialPort->write(Protocole->GetTrame());
+    SerialPort->write(Protocole->trametoSend);
 }
 
 void MainWindow::on_ButtonLaserOFF_clicked()
 {
     Protocole->LaserOFF();
-    //SerialPort->write(Protocole->GetTrame());
+    SerialPort->write(Protocole->trametoSend);
 }
 
 void MainWindow::on_ButtonINIT_clicked()
 {
     Protocole->InitMoteur();
+    SerialPort->write(Protocole->trametoSend);
 }

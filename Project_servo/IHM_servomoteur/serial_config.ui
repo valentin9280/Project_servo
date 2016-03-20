@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>683</width>
-    <height>437</height>
+    <width>352</width>
+    <height>176</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,73 +19,15 @@
   <widget class="QGroupBox" name="groupBox">
    <property name="geometry">
     <rect>
-     <x>50</x>
-     <y>30</y>
-     <width>311</width>
-     <height>231</height>
+     <x>10</x>
+     <y>10</y>
+     <width>271</width>
+     <height>71</height>
     </rect>
    </property>
    <property name="title">
     <string>Configuration</string>
    </property>
-   <widget class="QComboBox" name="comboBoxParity">
-    <property name="geometry">
-     <rect>
-      <x>120</x>
-      <y>150</y>
-      <width>86</width>
-      <height>25</height>
-     </rect>
-    </property>
-    <item>
-     <property name="text">
-      <string>NO</string>
-     </property>
-    </item>
-   </widget>
-   <widget class="QComboBox" name="comboBoxFlowControl">
-    <property name="geometry">
-     <rect>
-      <x>120</x>
-      <y>180</y>
-      <width>86</width>
-      <height>25</height>
-     </rect>
-    </property>
-    <item>
-     <property name="text">
-      <string>NO</string>
-     </property>
-    </item>
-   </widget>
-   <widget class="QLabel" name="label_5">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>180</y>
-      <width>91</width>
-      <height>17</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Flow Control</string>
-    </property>
-   </widget>
-   <widget class="QComboBox" name="comboBoxStop">
-    <property name="geometry">
-     <rect>
-      <x>120</x>
-      <y>120</y>
-      <width>86</width>
-      <height>25</height>
-     </rect>
-    </property>
-    <item>
-     <property name="text">
-      <string>1</string>
-     </property>
-    </item>
-   </widget>
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
@@ -99,70 +41,13 @@
      <string>CONN</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_2">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>60</y>
-      <width>41</width>
-      <height>17</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Baud</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_6">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>150</y>
-      <width>61</width>
-      <height>17</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Parity</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_3">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>90</y>
-      <width>61</width>
-      <height>17</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Data Bits</string>
-    </property>
-   </widget>
-   <widget class="QComboBox" name="comboBoxDataBits">
-    <property name="geometry">
-     <rect>
-      <x>120</x>
-      <y>90</y>
-      <width>86</width>
-      <height>25</height>
-     </rect>
-    </property>
-    <property name="currentText">
-     <string>8</string>
-    </property>
-    <item>
-     <property name="text">
-      <string>8</string>
-     </property>
-    </item>
-   </widget>
    <widget class="QComboBox" name="comboBoxCONN">
     <property name="enabled">
      <bool>true</bool>
     </property>
     <property name="geometry">
      <rect>
-      <x>120</x>
+      <x>80</x>
       <y>30</y>
       <width>86</width>
       <height>25</height>
@@ -172,38 +57,10 @@
      <bool>false</bool>
     </property>
    </widget>
-   <widget class="QComboBox" name="comboBoxBaud">
-    <property name="geometry">
-     <rect>
-      <x>120</x>
-      <y>60</y>
-      <width>86</width>
-      <height>25</height>
-     </rect>
-    </property>
-    <item>
-     <property name="text">
-      <string>115200</string>
-     </property>
-    </item>
-   </widget>
-   <widget class="QLabel" name="label_4">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>120</y>
-      <width>71</width>
-      <height>17</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Stop Bit</string>
-    </property>
-   </widget>
    <widget class="QPushButton" name="ButtonRefresh">
     <property name="geometry">
      <rect>
-      <x>220</x>
+      <x>190</x>
       <y>30</y>
       <width>71</width>
       <height>25</height>
@@ -217,8 +74,8 @@
   <widget class="QPushButton" name="ButtonOk">
    <property name="geometry">
     <rect>
-     <x>90</x>
-     <y>270</y>
+     <x>80</x>
+     <y>90</y>
      <width>41</width>
      <height>25</height>
     </rect>
@@ -230,8 +87,8 @@
   <widget class="QPushButton" name="ButtonAnnuler">
    <property name="geometry">
     <rect>
-     <x>170</x>
-     <y>270</y>
+     <x>160</x>
+     <y>90</y>
      <width>61</width>
      <height>25</height>
     </rect>

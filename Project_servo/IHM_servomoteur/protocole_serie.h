@@ -12,18 +12,18 @@ public:
     void MoveMoteur(int SensMoteur1 , int SensMoteur2);
     void Dessiner(int figure);
     void InitMoteur();
-    QByteArray GetTrame(void);
      protocole_serie();
+     QByteArray trametoSend;
   private:
 
 
-    enum Commande{Move =31,Laser,Forme,init};
-    enum Figure{ carre =31, cercle , triangle};
-    enum Laser{OFF=31,ON};
-    enum deplacement{NoMove = 31,Gauche , Droite};
+    enum Commande{Move =49,Laser,Forme,init};
+    enum Figure{ carre =49, cercle , triangle};
+    enum Laser{OFF=49,ON};
+    enum deplacement{NoMove = 49,Gauche , Droite};
 
 
-    QByteArray trametoSend;
+
 
 
 };

@@ -55,7 +55,3 @@ void protocole_serie::MoveMoteur(int SensMoteur1, int SensMoteur2)
     }
     trametoSend.append('\0');
 }
-QByteArray protocole_serie::GetTrame(void)
-{
-    return this->trametoSend;
-}
