@@ -4,7 +4,7 @@ import AngleServo
 
 class Figure:
     def __init__(self, i):
-        self.t = i
+        self.i = i
         self.zeroHorizontal = -90;
         self.zeroVertical = -90;
         pass
@@ -13,7 +13,7 @@ class Figure:
         for nb in range(0, 5):
             for f in range(0, 360, 5):
                 angle = f * 2 * math.pi / 360.0
-                self.i.setAngle(int(math.cos(angle) * 25.0), int(math.sin(angle) * 25.0))
+                self.i.Angle(int(math.cos(angle) * 25.0), int(math.sin(angle) * 25.0))
                 time.sleep(0.01)
 
     def DeplacerVers(self, X, Y):
@@ -26,6 +26,9 @@ class Figure:
     def Position(self):
         return self.i.servoHorizontal.Angle_info() - self.zeroHorizontal , self.i.servoVertical.Angle_info() - self.zeroVertical
 
+    def DeplacerDe(self,X,Y):
+        pos = self.Position()
+        self.DeplacerVers(pos[O]+X , pos[1] + Y)
 
     def line(self, X ,Y):
         Xpos = int(self,Position())
@@ -47,5 +50,5 @@ class Figure:
 
     def DessinerTriangle(self):
         for nb in range(0,4):
-            self.Line()
+            self.DeplacerVers()
         pass

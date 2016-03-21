@@ -2,7 +2,7 @@ from PWMcontrol import *
 
 class angleServo:
     def __init__(self, broche):
-        self.PWM = PWM(broche, 1500000, 200000000)
+        self.PWM = PWM(broche, 1500000, 20000000)
         self.PWM.duty(1500000)
         self.PWM.period(20000000)
 

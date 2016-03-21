@@ -12,7 +12,22 @@ class traitement_protocole():
 				octet2 = date[2]
 
 				if command == 49:
-					self.MoveMoteur(octet1 , octet2)	
+					if octet1 == 52:
+						self.figure.init()
+					elif octet1 == 49:
+					angle1 = 0
+					elif octet1 == 50:
+					angle1 = 15
+					elif octet1 == 51:
+					ange1 = -15
+					if octer2 == 49:
+					angle2 = 0
+					elif octet2 == 50:
+					angle2 = 15
+					elif octet2 == 51
+					angle2 = -15
+					self.figure.sDeplacerDe(ange1,angle2)
+
 				elif command == 50:
 					if octet1 == 49:
 						self.laser.laserOFF()
@@ -25,8 +40,7 @@ class traitement_protocole():
 				     	self.figure.DessinerCercle()
 				     elif octet1 == 51:
 				     	self.figure.DessinerTriangle()
-				elif command == 52:
-						self.figure.init()
+						
 
 
 
