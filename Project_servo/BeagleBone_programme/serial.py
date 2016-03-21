@@ -2,6 +2,8 @@ import serial
 import os
 import time
 import sys
+import serial
+import os
 from traitement_protocole import*
 
 os.system("echo BB-UART1 > /sys/devices/bone_capmgr.8/slots")

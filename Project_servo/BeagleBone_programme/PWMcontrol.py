@@ -2,6 +2,11 @@ import serial
 import os
 import time
 
+
+def activePWM():
+    os.system("echo am33xx_pwm > /sys/devices/bone_capemgr.8/slots")
+    time.sleep(2)
+
 def writeFile(fichier, data):
     f = open(fichier, 'w')
     f.write(data)
@@ -15,9 +20,6 @@ def readFile(fichier):
     f.close()
     return data
 
-def activePWM():
-	os.system("echo am33xx_pwm > /sys/devices/bone_capemgr.8/slots")
-    time.sleep(2)
 
 class PWM:
     def __init__(self, broche, duty, period):
@@ -28,12 +30,12 @@ class PWM:
         time.sleep(1)
         writeFile("/sys/devices/ocp.3/pwm_test_"+broche+"/run", str(1))
         
-    def set_duty(self, duty):
+    def duty(self, duty):
         writeFile("/sys/devices/ocp.3/pwm_test_"+broche+"/duty", str(duty))
         
-    def get_duty(self):
+    def duty_info(self):
         return readFile("/sys/devices/ocp.3/pwm_test_"+broche+"/duty")
 
-    def set_period(self, period):
+    def period(self, period):
         writeFile("/sys/devices/ocp.3/pwm_test_"+broche+"/period", str(period))
         
