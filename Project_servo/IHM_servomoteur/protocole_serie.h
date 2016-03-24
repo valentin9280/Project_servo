@@ -14,8 +14,6 @@ public:
     void InitMoteur();
      protocole_serie();
      QByteArray trametoSend;
-  private:
-
 
     enum Commande{Move =49,Laser,Forme,init};
     enum Figure{ carre =49, cercle , triangle};

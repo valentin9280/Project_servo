@@ -10,7 +10,7 @@ void protocole_serie::LaserON()
     trametoSend.clear();
     trametoSend.append(Laser);
     trametoSend.append(ON);
-    trametoSend.append('\0');
+    trametoSend.append('\n');
 }
 
 void protocole_serie::LaserOFF()
@@ -18,7 +18,7 @@ void protocole_serie::LaserOFF()
     trametoSend.clear();
     trametoSend.append(Laser);
     trametoSend.append(OFF);
-    trametoSend.append('\0');
+    trametoSend.append('\n');
 
 }
 void protocole_serie::Dessiner(int figure)
@@ -26,7 +26,7 @@ void protocole_serie::Dessiner(int figure)
     trametoSend.clear();
     trametoSend.append(Forme);
     trametoSend.append(figure);
-    trametoSend.append('\0');
+    trametoSend.append('\n');
 }
 
 void protocole_serie::InitMoteur(void)
@@ -34,7 +34,7 @@ void protocole_serie::InitMoteur(void)
     trametoSend.clear();
     trametoSend.append(Move);
     trametoSend.append(init);
-    trametoSend.append('\0');
+    trametoSend.append('\n');
 }
 
 void protocole_serie::MoveMoteur(int SensMoteur1, int SensMoteur2)
@@ -53,5 +53,5 @@ void protocole_serie::MoveMoteur(int SensMoteur1, int SensMoteur2)
         case 0:trametoSend.append(NoMove);break;
         case 1:trametoSend.append(Droite);break;
     }
-    trametoSend.append('\0');
+    trametoSend.append('\n');
 }

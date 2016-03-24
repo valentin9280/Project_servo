@@ -8,7 +8,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
    WindowSerial = new serial_config(this);
    Protocole = new protocole_serie;
-    QObject::connect(WindowSerial, SIGNAL(ConfigurationSerialConnection(QString)), this, SLOT(SerialConnect(QString)));
+   QObject::connect(WindowSerial, SIGNAL(ConfigurationSerialConnection(QString)), this, SLOT(SerialConnect(QString)));
 }
 
 MainWindow::~MainWindow()
@@ -32,8 +32,6 @@ void MainWindow::SerialConnect(QString PortName)
         ui->Log->append("Connecté à : " + PortName + " 115200Bds, 8 Data, NoParity, 1 Stop ");
         ui->groupBoxForme->setEnabled(true);
         ui->groupBoxCommande->setEnabled(true);
-       //connect(SerialPort, SIGNAL(bytesWritten(qint64)), this,SLOT(DataWritten(qint64)));
-
     }
     else
     {
@@ -43,10 +41,11 @@ void MainWindow::SerialConnect(QString PortName)
 
 }
 
+
+
 void MainWindow::on_SerialButton_clicked()
 {
    WindowSerial->show();
-   SerialPort->write(Protocole->trametoSend);
 }
 
 void MainWindow::on_CarreButton_clicked()
@@ -95,8 +94,7 @@ void MainWindow::on_ButtonDroit_clicked()
 void MainWindow::on_ButtonLaserON_clicked()
 {
     Protocole->LaserON();
-    SerialPort->write(Protocole->trametoSend);
-}
+    SerialPort->write(Protocole->trametoSend);}
 
 void MainWindow::on_ButtonLaserOFF_clicked()
 {
