@@ -1,9 +1,8 @@
-import serial
 import os
 import time
 
 
-def activePWM():
+def activatePWM():
     os.system("echo am33xx_pwm > /sys/devices/bone_capemgr.8/slots")
     time.sleep(2)
 
@@ -25,17 +24,21 @@ class PWM:
     def __init__(self, broche, duty, period):
         os.system("echo bone_pwm_"+broche+" > /sys/devices/bone_capemgr.8/slots")
         time.sleep(2)
-        os.system("echo " + str(period) + " > /sys/devices/ocp.3/pwm_test_"+broche+"/period")
-        os.system("echo " + str(duty) + " > /sys/devices/ocp.3/pwm_test_"+broche+"/duty")
+	self.name_channel = self.nameChannel(broche)
+        os.system("echo " + str(period) + " > /sys/devices/ocp.3/"+self.name_channel+"/period")
+        os.system("echo " + str(duty) + " > /sys/devices/ocp.3/"+self.name_channel+"/duty")
         time.sleep(1)
-        writeFile("/sys/devices/ocp.3/pwm_test_"+broche+"/run", str(1))
+        writeFile("/sys/devices/ocp.3/"+self.name_channel+"/run", str(1))
         
     def duty(self, duty):
-        writeFile("/sys/devices/ocp.3/pwm_test_"+broche+"/duty", str(duty))
+        writeFile("/sys/devices/ocp.3/"+self.name_channel+"/duty", str(duty))
         
     def duty_info(self):
-        return readFile("/sys/devices/ocp.3/pwm_test_"+broche+"/duty")
+        return readFile("/sys/devices/ocp.3/"+self.name_channel+"/duty")
 
     def period(self, period):
-        writeFile("/sys/devices/ocp.3/pwm_test_"+broche+"/period", str(period))
+        writeFile("/sys/devices/ocp.3/"+self.name_channel+"/period", str(period))
         
+    def nameChannel(self,broche):
+	a = os.popen("ls /sys/devices/ocp.3 | grep pwm_test_"+broche)
+	return a.read()[:-1]

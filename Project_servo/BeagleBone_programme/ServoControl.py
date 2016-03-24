@@ -3,13 +3,11 @@ import laser
 import figure
 import AngleServo
 
-class ServoControl:
+class servoControl:
     def __init__(self):
-        PWM.activatePWM()
-        self.figure = Figure(self)
-        self.servoHorizontal = AngleServo("P8_13")      #GPIO 23
-        self.servoVertical = AngleServo("P8_29")     #GPIO 22
-        self.laser = laser(46)              #GPIO 46
+        PWMcontrol.activatePWM()
+        self.servoHorizontal =AngleServo.angleServo("P9_14")      #GPIO 23
+        self.servoVertical = AngleServo.angleServo("P8_13")     #GPIO 22
        
     
     def AngleHorizontal(self, angleHorizontal):
